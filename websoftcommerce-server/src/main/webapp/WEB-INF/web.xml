@@ -2,7 +2,22 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
-
+    <!-- Wildfly mode development
+    <context-param>
+        <param-name>org.jboss.weld.development</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    -->
+    <!-- Servlets -->    
+    <servlet>
+        <servlet-name>VaadinServlet</servlet-name>
+        <servlet-class>com.vaadin.flow.server.VaadinServlet</servlet-class>    
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VaadinServlet</servlet-name>
+        <url-pattern>/VAADIN/*</url-pattern>
+    </servlet-mapping>
+    
     <!-- Servlets -->
     <servlet>
         <servlet-name>gwtRequest</servlet-name>

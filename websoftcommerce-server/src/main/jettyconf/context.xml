@@ -1,6 +1,10 @@
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
-  <Call name="setInitParameter">
-    <Arg>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</Arg>
-    <Arg>false</Arg>
-  </Call>
+    <Call name="setInitParameter">
+        <Arg>org.eclipse.jetty.servlet.Default.useFileMappedBuffer</Arg>
+        <Arg>false</Arg>
+    </Call>
+    <Call name="setAttribute">
+        <Arg>org.eclipse.jetty.server.webapp.WebInfIncludeJarPattern</Arg>
+        <Arg>.*/spring-security[^/]*\.jar$|.*/spring-web[^/]*\.jar$|.*/classes/.*</Arg>
+    </Call>
 </Configure>
